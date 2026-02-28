@@ -1,0 +1,98 @@
+/* src/pages/Exam.module.css */
+
+.page {
+  min-height: 100vh; padding-top: 60px;
+  background: radial-gradient(ellipse 1000px 500px at 50% 0%, rgba(0,212,255,0.03) 0%, transparent 60%), var(--bg);
+}
+
+.layout {
+  display: grid; grid-template-columns: 1fr 320px; gap: 0;
+  height: calc(100vh - 60px);
+}
+
+/* ── Left */
+.main {
+  padding: 32px 40px; overflow-y: auto;
+  border-right: 1px solid var(--border);
+}
+
+.examHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.examTitle  { font-family: var(--display); font-size: 36px; letter-spacing: 1px; line-height: 1; }
+.examSub    { font-size: 11px; color: var(--text-dim); font-family: var(--mono); margin-top: 4px; }
+
+.timer { font-family: var(--display); font-size: 42px; letter-spacing: 2px; color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); }
+.timerWarn   { color: var(--warn) !important; text-shadow: 0 0 20px rgba(255,171,0,0.4) !important; }
+.timerDanger { color: var(--danger) !important; text-shadow: 0 0 20px rgba(255,61,87,0.4) !important; animation: tick 1s infinite; }
+@keyframes tick { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+
+.progressBar  { height: 3px; background: var(--surface2); border-radius: 2px; margin-bottom: 28px; }
+.progressFill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--safe)); border-radius: 2px; transition: width 0.5s ease; }
+
+.questionCard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px; margin-bottom: 16px;
+}
+.qNumber { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+.qText   { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 24px; }
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  padding: 14px 18px;
+  background: var(--surface2); border: 1.5px solid var(--border);
+  border-radius: var(--radius); cursor: pointer;
+  font-size: 14px; font-weight: 500;
+  transition: all var(--transition); display: flex; align-items: center; gap: 12px;
+}
+.option:hover    { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+.selected        { border-color: var(--accent) !important; background: var(--accent-dim) !important; color: var(--accent) !important; }
+.optLetter {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0;
+}
+
+.examNav { display: flex; gap: 12px; margin-top: 8px; }
+.navBtn {
+  padding: 11px 24px; border-radius: var(--radius);
+  font-family: var(--body); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  border: 1px solid var(--border); background: var(--surface2); color: var(--text-mid);
+}
+.navBtn:hover:not(:disabled) { border-color: var(--border2); color: var(--text); }
+.navBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+.primary { background: var(--accent) !important; color: #000 !important; border-color: var(--accent) !important; }
+.primary:hover { background: #33ddff !important; box-shadow: 0 4px 16px rgba(0,212,255,0.4) !important; }
+.endBtn { margin-left: auto; background: var(--danger-dim) !important; color: var(--danger) !important; border-color: rgba(255,61,87,0.3) !important; }
+.endBtn:hover { background: var(--danger) !important; color: #fff !important; }
+
+/* ── Right sidebar */
+.sidebar { padding: 24px 20px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; }
+
+.webcamMini { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.webcamHeader {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11px; font-weight: 600; color: var(--text-dim); letter-spacing: 0.5px;
+}
+.webcamFeed { aspect-ratio: 4/3; background: #000; position: relative; overflow: hidden; }
+.webcamPlaceholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg,#0a0f14,#111820);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.miniFaceBox {
+  width: 80px; height: 90px;
+  border: 1.5px solid var(--accent); border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,212,255,0.3);
+  animation: wobble 3s ease-in-out infinite;
+}
+@keyframes wobble {
+  0%,100%{transform:translate(-2px,-2px);} 33%{transform:translate(2px,-1px);} 66%{transform:translate(-1px,2px);}
+}
+.miniLabel {
+  position: absolute; bottom: 6px; left: 6px;
+  font-family: var(--mono); font-size: 9px; color: var(--safe);
+  background: rgba(0,0,0,0.7); padding: 2px 6px; border-radius: 3px;
+}

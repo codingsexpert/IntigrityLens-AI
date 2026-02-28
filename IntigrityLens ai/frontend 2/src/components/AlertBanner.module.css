@@ -1,0 +1,22 @@
+/* src/components/AlertBanner.module.css */
+
+.banner {
+  position: fixed; top: 70px; left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: var(--danger-dim);
+  border: 1px solid rgba(255,61,87,0.4);
+  color: var(--danger);
+  padding: 10px 20px; border-radius: 30px;
+  font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  opacity: 0; pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 150; white-space: nowrap;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.icon { font-size: 14px; }

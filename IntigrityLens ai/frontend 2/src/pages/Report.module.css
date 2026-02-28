@@ -1,0 +1,40 @@
+/* src/pages/Report.module.css */
+.page { min-height:100vh; padding-top:60px; background:var(--bg); display:flex; align-items:flex-start; justify-content:center; }
+.container { max-width:860px; width:100%; padding:40px 24px; }
+.top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:32px; }
+.heading { font-family:var(--display); font-size:60px; letter-spacing:2px; line-height:0.95; }
+.heading span { color:var(--accent); }
+.meta { text-align:right; display:flex; flex-direction:column; gap:4px; padding-top:8px; }
+.metaLine { font-size:12px; color:var(--text-dim); font-family:var(--mono); }
+.metaLine strong { color:var(--text); }
+.sessionId { color:var(--accent) !important; }
+.verdict { border-radius:14px; padding:24px 28px; margin-bottom:24px; display:flex; align-items:center; gap:24px; border:1.5px solid; }
+.clear   { border-color:rgba(0,230,118,0.3);  background:rgba(0,230,118,0.04); }
+.review  { border-color:rgba(255,171,0,0.3);  background:rgba(255,171,0,0.04); }
+.flagged { border-color:rgba(255,61,87,0.3);  background:rgba(255,61,87,0.04); }
+.verdictScore { font-family:var(--display); font-size:72px; line-height:1; flex-shrink:0; }
+.verdictInfo { flex:1; }
+.verdictTitle { font-size:20px; font-weight:800; margin-bottom:6px; }
+.verdictDesc  { font-size:13px; color:var(--text-mid); line-height:1.6; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+.card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; }
+.cardTitle { font-size:11px; font-weight:600; color:var(--text-dim); letter-spacing:1px; margin-bottom:16px; text-transform:uppercase; }
+.breakdown { display:flex; flex-direction:column; gap:12px; }
+.breakRow { display:flex; align-items:center; gap:12px; }
+.breakName { font-size:12px; font-weight:500; width:130px; flex-shrink:0; }
+.breakBar  { flex:1; height:6px; background:var(--surface2); border-radius:3px; overflow:hidden; }
+.breakFill { height:100%; border-radius:3px; transition:width 1s ease; }
+.breakCount{ font-family:var(--mono); font-size:11px; color:var(--text-dim); width:16px; text-align:right; }
+.formula { margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+.formulaLabel { font-size:11px; color:var(--text-dim); font-weight:600; letter-spacing:1px; margin-bottom:10px; }
+.formulaText  { font-family:var(--mono); font-size:11px; color:var(--accent); background:var(--accent-dim); padding:10px 12px; border-radius:6px; line-height:1.7; }
+.timeline { display:flex; flex-direction:column; gap:10px; max-height:280px; overflow-y:auto; }
+.noEvents { color:var(--text-dim); font-size:12px; padding:16px 0; }
+.timelineItem { display:flex; gap:12px; align-items:flex-start; padding:10px 12px; border-radius:8px; background:var(--surface2); border-left:2px solid; }
+.tlHigh { border-left-color:var(--danger); }
+.tlLow  { border-left-color:var(--warn); }
+.tlTime { font-family:var(--mono); font-size:10px; color:var(--text-dim); white-space:nowrap; padding-top:2px; }
+.tlBody { flex:1; }
+.tlEvent  { font-size:12px; font-weight:600; margin-bottom:2px; }
+.tlDetail { font-size:11px; color:var(--text-dim); }
+.actions { display:flex; gap:12px; flex-wrap:wrap; }

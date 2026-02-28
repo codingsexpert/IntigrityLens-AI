@@ -1,0 +1,75 @@
+/* src/components/RiskScoreGauge.module.css */
+
+.wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.label {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-dim); letter-spacing: 1px;
+  margin-bottom: 14px; text-transform: uppercase;
+}
+
+.gaugeWrap {
+  position: relative; width: 130px; height: 70px;
+  margin: 0 auto 12px;
+}
+
+.svg { width: 100%; height: auto; overflow: visible; }
+
+.track {
+  fill: none;
+  stroke: var(--surface2);
+  stroke-width: 10;
+}
+
+.fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.value {
+  text-align: center;
+  font-family: var(--display);
+  font-size: 42px; letter-spacing: 1px;
+  line-height: 1; margin-bottom: 4px;
+  transition: color 0.5s;
+}
+
+.sublabel {
+  text-align: center;
+  font-size: 11px; color: var(--text-dim);
+  font-family: var(--mono);
+  margin-bottom: 16px;
+}
+
+/* Signal grid */
+.signalGrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-top: 4px;
+}
+
+.signalItem {
+  padding: 10px 12px;
+  background: var(--surface2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.signalName {
+  font-size: 10px; color: var(--text-dim);
+  font-weight: 600; margin-bottom: 4px;
+  font-family: var(--mono);
+}
+
+.signalVal {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  transition: color 0.3s;
+}
+.safe   { color: var(--safe); }
+.warn   { color: var(--warn); }
+.danger { color: var(--danger); }
